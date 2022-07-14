@@ -1,0 +1,34 @@
+//- 
+  3D Cylinders
+  Grant Jenkins, June 2022
+  Submitted for the even and odd numbers codepen challenge
+  #codepenchallenge,  #cpc-even-odd
+
+mixin cube(id)
+  div(id=id,class='cube')
+    .container
+      .left
+      .right
+      .top
+      .bottom
+      .front
+      .back
+      
+mixin cylinder(id, sides = 36)
+  div(id=id,class='cylinder')
+    .container
+      - for (s = 0; s < sides; s++)
+        span
+        
+.scene
+  +cube('ground')
+  .wheels._face
+    +cylinder('wheel-1')
+    +cylinder('wheel-2')
+  .pillars._face
+    +cylinder('pillar-1')
+    +cylinder('pillar-2')
+    +cylinder('pillar-3')
+    +cylinder('pillar-4')
+  .roof._face
+    +cube('roof')
